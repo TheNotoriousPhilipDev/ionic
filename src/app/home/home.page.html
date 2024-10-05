@@ -13,38 +13,57 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Usuario</ion-card-subtitle>
+      <ion-card-title>Bienvenido</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 
-  <ion-input></ion-input>
-
-  <ion-input value="Dato"></ion-input>
-
-  <ion-input placeholder="Placeholder"></ion-input>
-
-  <ion-input clearInput value="Limpiar"></ion-input>
-
-  <ion-input type="number" value="123"></ion-input>
-
-  <ion-input value="Disable" disabled></ion-input>
-
-  <ion-input value ="Solo lectura" readonly></ion-input>
 
   <ion-item>
-    <ion-label>Etiqueta</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [{[(ngModel)]="nombre" }]></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Floating</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="fixed">Fixed</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+  <ion-list>
+    <icon-radio-group [{ngModel}]="Relacion">
+      <ion-list-header>
+        <ion-label>Relacion</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Amigo</ion-label>
+        <icon-radio color="success" value="Amigo"></icon-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Familia</ion-label>
+        <icon-radio color="primary" value="Familiar"></icon-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Enemigo</ion-label>
+        <icon-radio color="danger" value="Enemigo" disabled></icon-radio>
+      </ion-item>
+    </icon-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Select</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Materias</ion-label>
+      <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar" [{[(ngModel)]="Materias" }]>
+        <ion-select-option value="Español">Español</ion-select-option>
+        <ion-select-option value="Quimica">Quimica</ion-select-option>
+        <ion-select-option value="Ciencias">Ciencias</ion-select-option>
+        <ion-select-option value="Fisica">Fisica</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="primary" expand="full" (click)="getNombre()">OK</ion-button>
+  <br>
+  <ion-label>{{Mensaje}}</ion-label>
 
 </ion-content>

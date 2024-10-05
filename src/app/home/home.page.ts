@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  Nombre: string;
+  Mensaje: string;
+  Relacion: string;
+  Materias: string;
 
-  constructor() {}
+  constructor() { }
+
+  getNombre() {
+    this.Mensaje = "Bienvenido" + this.Nombre + "!" + "tu eres mi" + this.Relacion + " y estudias" + this.Materias;
+  }
 
 }
